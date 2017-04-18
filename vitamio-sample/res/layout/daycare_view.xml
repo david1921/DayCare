@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/grey">
+    
+ <TableRow
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent">
+     <RelativeLayout>
+         <ImageView
+             android:id="@+id/play_area"
+             android:layout_width="180dp"
+             android:layout_height="180dp"
+             android:padding="5dp"
+             android:src="@drawable/icon"/>
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/play_area"
+             android:textSize="25dp"
+             android:text="Play Area"/>
+     </RelativeLayout>
+
+     <RelativeLayout>
+         <ImageView
+             android:id="@+id/crib_area"
+             android:layout_width="180dp"
+             android:layout_height="180dp"
+             android:padding="5dp"
+             android:src="@drawable/icon"/>
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/crib_area"
+             android:textSize="25dp"
+             android:text="Crib Area"/>
+
+     </RelativeLayout>
+ </TableRow>
+
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <RelativeLayout>
+            <ImageView
+                android:id="@+id/video_call"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:padding="5dp"
+                android:src="@drawable/icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/video_call"
+                android:textSize="25dp"
+                android:text="Video call"/>
+        </RelativeLayout>
+
+        <RelativeLayout>
+            <ImageView
+                android:id="@+id/crib_view"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:padding="5dp"
+                android:src="@drawable/icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/crib_view"
+                android:textSize="25dp"
+                android:text="Crib view"/>
+
+        </RelativeLayout>
+    </TableRow>
+
+</TableLayout>

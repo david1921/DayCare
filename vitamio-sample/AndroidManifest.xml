@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="io.vov.vitamio.demo"
+    android:versionCode="002"
+    android:versionName="0.0.2" >
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+
+
+
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="19"
+        tools:overrideLibrary="io.vov.vitamio" />
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/icon"
+        android:label="@string/vitamio_demo_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- Don't forgot InitActivity -->
+        <activity
+            android:name="io.vov.vitamio.activity.InitActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".VitamioListActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MediaPlayerDemo"
+            android:label="Media/MediaPlayer" />
+        <activity
+            android:name=".VideoViewDemo"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:label="Media/VideoView" />
+        <activity
+            android:name=".MediaPlayerDemo_Video"
+            android:label="Media/MediaPlayer" />
+        <activity
+            android:name=".MediaPlayerDemo_setSurface"
+            android:label="Media/MediaPlayer" />
+        <activity
+            android:name=".MediaPlayerDemo_Audio"
+            android:label="Media/MediaPlayer" />
+        <activity
+            android:name=".MediaMetadataRetrieverDemo"
+            android:label="Media/MediaMetadata" />
+        <activity
+            android:name=".MediaPlayerSubtitle"
+            android:label="@string/title_activity_media_player_subtitle" />
+        <activity
+            android:name=".VideoViewSubtitle"
+            android:label="@string/title_activity_video_view_subtitle" />
+        <activity
+            android:name=".VideoSubtitleList"
+            android:label="@string/title_activity_video_subtitle_list" />
+        <activity
+            android:name=".VideoViewBuffer"
+            android:label="@string/title_activity_video_buffer" />
+
+        <activity android:name="com.videocall.activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+        <receiver
+            android:name="com.videocall.receivers.CallReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+            <action android:name="com.tutorialspoint.ACCEPT" />
+            <action android:name="com.tutorialspoint.REJECT" />
+            </intent-filter>
+        </receiver>
+
+
+        <service
+            android:name="com.videocall.services.FireMsgService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+             <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name="com.videocall.activities.IncomingCallActivity" />
+
+        <service
+            android:name="com.videocall.services.MyFirebaseInstanceIDService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.videocall.activities.MakeCallActivity"
+            android:label="@string/title_activity_make_call"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".FirebaseMsgService"
+            android:enabled="true"
+            android:exported="true" >
+
+        </service>
+    </application>
+
+</manifest>
